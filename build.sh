@@ -57,7 +57,6 @@ build() {
     output_filename=`basename "$download_url"`
     echo "Downloading $download_url to $build_dir/$output_filename..."
     curl -Ls "$download_url" -o "$build_dir/$output_filename"
-    mkdir -p "$build_dir/home/.local/bin"
     echo "Installing $tool_name..."
     install_tool "$build_dir/$output_filename" "$build_dir/bin"
     rm -f "$build_dir/$output_filename"

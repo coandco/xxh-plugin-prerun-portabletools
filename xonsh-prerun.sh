@@ -1,7 +1,7 @@
 CURR_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 if [ ! -d "$CURR_DIR/bin/xonsh-files" ] && [ -x "$CURR_DIR/bin/xonsh-appimage" ]; then
-  cd bin
+  cd "$CURR_DIR/bin"
   # This is noisy, so we want to suppress the output
   ./xonsh-appimage --appimage-extract > /dev/null
   mv squashfs-root xonsh-files
