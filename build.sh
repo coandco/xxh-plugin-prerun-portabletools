@@ -8,7 +8,7 @@ main() {
 }
 
 build() {
-
+  set -x
   CDIR="$(cd "$(dirname "$0")" && pwd)"
   build_dir=$CDIR/build
 
