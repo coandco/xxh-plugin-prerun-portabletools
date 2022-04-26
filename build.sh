@@ -4,6 +4,7 @@ main() {
 	need_cmd curl
 	need_cmd grep
 	need_cmd chmod
+	need_cmd find
 	build
 }
 
@@ -31,7 +32,7 @@ build() {
 
   mkdir -p "$build_dir/bin"
 
-  for f in *-github-tool.sh; do
+  find . -type f -name "*-github-tool.sh" -print0 | while IFS= read -r -d '' f; do
     required_vars=(tool_github_repo tool_arch tool_version install_tool)
     for required_var in "${required_vars[@]}"; do
       unset "$required_var"
